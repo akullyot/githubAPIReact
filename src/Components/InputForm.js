@@ -7,12 +7,10 @@ function InputForm({setUser}){
     };
     const handleSubmit = async (event) =>{
         event.preventDefault();
-        console.log('here');
         const url = `https://api.github.com/users/${username}`;
         const response = await fetch(url);
         const data = await response.json();
         setUser(data);
-        console.log(data);
     };
     const clear = () =>{
         setUsername('');
